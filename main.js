@@ -59,6 +59,20 @@ var final = Math.floor(Math.random() * (nowNum2) + nowNum1);
 
 
 //
+var clearGame = document.querySelector(".clear-game");
+clearGame.addEventListener("click",clearGameField);
+
+function clearGameField(e) {
+  e.preventDefault();
+  var clearEmptyName1 = document.getElementById("Name1");
+  var clearEmptyGuess1 = document.getElementById("Guess1");
+  var clearEmptyName2 = document.getElementById("Name2");
+  var clearEmptyGuess2 = document.getElementById("Guess2");
+  clearEmptyName1.value = "";
+  clearEmptyGuess1.value = "";
+  clearEmptyName2.value = "";
+  clearEmptyGuess2.value = "";
+}
 
 
 
