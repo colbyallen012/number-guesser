@@ -98,6 +98,3 @@ function clearGameField(e) {
 
 
 
-
-
-
