@@ -18,40 +18,38 @@ var firstGuessDestination = document.querySelector(".challenger1-guess");
 var secondGuessDestination = document.querySelector(".challenger2-guess");
 var prompt1 = document.querySelector(".thats1");
 var prompt2 = document.querySelector(".thats2");
-// var clearGame = document.querySelector(".clear-game");
-// var clearEmptyName1 = document.getElementById("Name1");
-// var clearEmptyGuess1 = document.getElementById("Guess1");
-// var clearEmptyName2 = document.getElementById("Name2");
-// var clearEmptyGuess2 = document.getElementById("Guess2");
+var clearGame = document.querySelector(".clear-game");
+var clearEmptyName1 = document.getElementById("Name1");
+var clearEmptyGuess1 = document.getElementById("Guess1");
+var clearEmptyName2 = document.getElementById("Name2");
+var clearEmptyGuess2 = document.getElementById("Guess2");
+var grabResetButton = document.querySelector(".reset-game");
 var randoNum;
 
 // Event Listeners
 
 range.addEventListener("click", updateRange);
 submitPlayer.addEventListener("click", updatePlayerInfo);
-// grabResetButton.addEventListener("click", resetGame);
-//clearGame.addEventListener("click",clearGameField);
+grabResetButton.addEventListener("click", resetGame);
+clearGame.addEventListener("click",clearGameField);
 
-// This part takes the min and max range and updates it to current range. 
+
+// Functions 
 
 function updateRange(e) {
 	e.preventDefault();
   firstRangeDestination.innerText = firstRange.value;
   secondRangeDestination.innerText = secondRange.value;
   randomNumber(Number(firstRange.value), Number(secondRange.value));
-  // firstRange.value = "";
-  // secondRange.value = "";
+  firstRange.value = "";
+  secondRange.value = "";
 }
 
-//This part generates a random number
 
 function randomNumber(min, max) {
-var randoNum = Math.floor(Math.random() * (max - min + 1)) + min;
-console.log(randoNum);
-return randoNum;
+  randoNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  console.log(randoNum);
 }
-
-// This part takes the user information and their respective guess and updates it to latest score box
 
 function updatePlayerInfo(e) {
   e.preventDefault();
@@ -59,34 +57,28 @@ function updatePlayerInfo(e) {
   secondPlayerDestination.innerText = secondPlayer.value;
   firstGuessDestination.innerText = firstGuess.value;
   secondGuessDestination.innerText = secondGuess.value;
-  guessCheck();
+  guessCheck(Number(firstGuess.value), prompt1);
+  guessCheck(Number(secondGuess.value), prompt2);
+
 }
 
-function guessCheck() {
-  if (Number(firstGuess.value) === randoNum) {
-      prompt1.innerText = "BOOM!";
-  } else if (Number(firstGuess.value) < randoNum) {
-      prompt1.innerText = "That's too low";
-  } else if (Number(firstGuess.value) > randoNum) {
-      prompt1.innerText = "That's too high";
+function guessCheck(guess, text) {
+  if (guess === randoNum) {
+      text.innerText = "BOOM!";
+  } else if (guess < randoNum) {
+      text.innerText = "That's too low";
+  } else if (guess > randoNum) {
+      text.innerText = "That's too high";
   } 
 }
 
+function resetGame(e) {
+  e.preventDefault();
+  location.reload(false);
+  generateRandomNumber();
+}
 
 
-
-// //This function will make the reset button reset the game and generate a new random number
-
-// var grabResetButton = document.querySelector(".reset-game");
-// grabResetButton.addEventListener("click", resetGame);
-
-// function resetGame(e) {
-//   e.preventDefault();
-//   location.reload(false);
-//   generateRandomNumber();
-// }
-
-// This function clears name/guess input fields.   
 function clearGameField(e) {
  e.preventDefault();
  clearEmptyName1.value = "";
