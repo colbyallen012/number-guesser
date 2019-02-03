@@ -68,8 +68,10 @@ main {
 .guess {
 	background-color: #F7F7F7;
 	width: 533px;
+  height: 1200px;
 	display: flex;
 	flex-direction: column;
+
 }
 
 
@@ -191,13 +193,14 @@ h3.thats1.thats2 {
 	font-weight: lighter;
 }
 
-.winner {
+.winner1, .winner2 {
 	border: 1px solid gray;
 	height: 188px;
 	width: 467px;
 	background-color: #FFFFFF;
 	margin: 10px 0 2px 10px;
 	text-align: center;
+  display: none;
 
 }
 
@@ -220,3 +223,20 @@ hr {
 	font-weight: bold;
 }
 
+input[type=text] {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=text]:focus {
+  box-shadow: 0 0 5px #DD1972;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 2px solid #DD1972;
+}

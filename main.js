@@ -24,6 +24,11 @@ var clearEmptyGuess1 = document.getElementById("Guess1");
 var clearEmptyName2 = document.getElementById("Name2");
 var clearEmptyGuess2 = document.getElementById("Guess2");
 var grabResetButton = document.querySelector(".reset-game");
+var firstError = document.querySelector(".error");
+var winnerOne = document.querySelector(".winner1");
+var winnerTwo = document.querySelector(".winner2");
+var winningName1 = document.querySelector(".Name1");
+var winningName2 = document.querySelector(".Name2");
 var randoNum;
 
 // Event Listeners
@@ -38,13 +43,17 @@ clearGame.addEventListener("click",clearGameField);
 
 function updateRange(e) {
 	e.preventDefault();
+  if (firstRange.value === "" || secondRange.value === "") {
+    alert("Please enter a range to play");
+  } else if (Number(firstRange.value) > Number(secondRange.value)) {
+    alert("Error: Your min range must be less than your max range");
+  } else {
   firstRangeDestination.innerText = firstRange.value;
   secondRangeDestination.innerText = secondRange.value;
   randomNumber(Number(firstRange.value), Number(secondRange.value));
-  firstRange.value = "";
+  firstRange.value = ""; 
   secondRange.value = "";
-}
-
+}} 
 
 function randomNumber(min, max) {
   randoNum = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -53,18 +62,23 @@ function randomNumber(min, max) {
 
 function updatePlayerInfo(e) {
   e.preventDefault();
+   if (firstPlayer.value === "" || secondPlayer.value === ""
+    || firstGuess.value === "" || secondGuess.value === "") {
+    alert("Please enter your name and a guess");
+  } else {
   firstPlayerDestination.innerText = firstPlayer.value;
   secondPlayerDestination.innerText = secondPlayer.value;
   firstGuessDestination.innerText = firstGuess.value;
   secondGuessDestination.innerText = secondGuess.value;
-  guessCheck(Number(firstGuess.value), prompt1);
-  guessCheck(Number(secondGuess.value), prompt2);
+  guessCheck(Number(firstGuess.value), prompt1, winnerOne, winningName1);
+  guessCheck(Number(secondGuess.value), prompt2, winnerTwo);
+}}
 
-}
-
-function guessCheck(guess, text) {
+function guessCheck(guess, text, winningCard, winner) {
   if (guess === randoNum) {
       text.innerText = "BOOM!";
+      winningCard.style.display = "block";
+      winner.innerText = firstPlayer.value + " is the";
   } else if (guess < randoNum) {
       text.innerText = "That's too low";
   } else if (guess > randoNum) {
@@ -86,6 +100,18 @@ function clearGameField(e) {
  clearEmptyName2.value = "";
  clearEmptyGuess2.value = "";
 }
+
+
+
+// function displayCardInfo(winner) {
+//   if (winner.style.display = "block") {
+//     if (firstPlayerDestination.innerText = firstPlayer.value) {
+//       firstPlayer.value + " is the";
+// } else if (winner.innerText = secondPlayer.value) {
+//       secondPlayer.value + " is the";
+//     }
+//   }
+// }
 
 
 
