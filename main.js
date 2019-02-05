@@ -29,6 +29,7 @@ var winnerOne = document.querySelector(".winner1");
 var winnerTwo = document.querySelector(".winner2");
 var winningName1 = document.querySelector(".Name1");
 var winningName2 = document.querySelector(".Name2");
+var deleteCard = document.querySelector(".delete-card");
 var randoNum;
 
 // Event Listeners
@@ -37,6 +38,7 @@ range.addEventListener("click", updateRange);
 submitPlayer.addEventListener("click", updatePlayerInfo);
 grabResetButton.addEventListener("click", resetGame);
 clearGame.addEventListener("click",clearGameField);
+deleteCard.addEventListener("click", removeCard);
 
 
 // Functions 
@@ -70,48 +72,66 @@ function updatePlayerInfo(e) {
   secondPlayerDestination.innerText = secondPlayer.value;
   firstGuessDestination.innerText = firstGuess.value;
   secondGuessDestination.innerText = secondGuess.value;
-  guessCheck(Number(firstGuess.value), prompt1, winnerOne, winningName1);
-  guessCheck(Number(secondGuess.value), prompt2, winnerTwo);
+  guessCheck(Number(firstGuess.value), prompt1);
+  guessCheck(Number(secondGuess.value), prompt2);
 }}
 
-function guessCheck(guess, text, winningCard, winner) {
+function guessCheck(guess, text) {
   if (guess === randoNum) {
       text.innerText = "BOOM!";
-      winningCard.style.display = "block";
-      winner.innerText = firstPlayer.value + " is the";
+      winningCard(winnerOne, winnerTwo, winningName1);
+      winningCard(winnerTwo, winnerOne, winningName2);
   } else if (guess < randoNum) {
       text.innerText = "That's too low";
   } else if (guess > randoNum) {
       text.innerText = "That's too high";
-  } 
+  }
 }
 
 function resetGame(e) {
   e.preventDefault();
   location.reload(false);
-  generateRandomNumber();
+  RandomNumber();
 }
-
 
 function clearGameField(e) {
- e.preventDefault();
- clearEmptyName1.value = "";
- clearEmptyGuess1.value = "";
- clearEmptyName2.value = "";
- clearEmptyGuess2.value = "";
+  e.preventDefault();
+  clearEmptyName1.value = "";
+  clearEmptyGuess1.value = "";
+  clearEmptyName2.value = "";
+  clearEmptyGuess2.value = "";
 }
 
 
+function winningCard(showCard, hideCard, info) {
+  if(prompt1.innerText === "BOOM!") {
+      showCard.style.display = "block";
+      hideCard.style.display = "none";
+      info.innerText = firstPlayer.value + " is the";
+      var faceOff = document.querySelector(".face-off");
+      faceOff.innerText = firstPlayer.value + " vs.  " + secondPlayer.value;
+      removeCard();
+  } if(prompt2.innerText === "BOOM!") {
+      showCard.style.display = "block";
+      hideCard.style.display = "none";
+      info.innerText = secondPlayer.value + " is the";
+      var faceOff = document.querySelector(".face-off");
+      faceOff.innerText = firstPlayer.value + " vs.  " + secondPlayer.value;
+      removeCard();
+ }
+}
 
-// function displayCardInfo(winner) {
-//   if (winner.style.display = "block") {
-//     if (firstPlayerDestination.innerText = firstPlayer.value) {
-//       firstPlayer.value + " is the";
-// } else if (winner.innerText = secondPlayer.value) {
-//       secondPlayer.value + " is the";
-//     }
-//   }
-// }
+function removeCard(e) {
+  e.preventDefault();
+   winnerOne.style.display = "none";
+   winnerTwo.style.display = "none";
+}
+  
+//
+
+ // var li = document.createElement('li');
+ //  li.innerText = input.value;
+
 
 
 
