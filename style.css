@@ -150,11 +150,13 @@ article.current-range  {
 	margin: 10px;
 }
 
-#Name1, #Name2 {
+#Name1, #Name2, #Guess1, #Guess2 {
   border: 1px solid #DDDDDD;
   width: 100%;
   height: 30px;
   margin: 0px 15px 0px 0px;
+  display: flex;
+  flex-direction: row;
 }
 
 .error3 {
@@ -164,11 +166,11 @@ article.current-range  {
   margin: 0px 10px 5px 10px;
 }
 
-#Guess1, #Guess2 {
+/*#Guess1, #Guess2 {
   border: 1px solid #DDDDDD;
   width: 100%;
   height: 30px;
-}
+}*/
 
 h2 {
 	margin: 10px 0 5px 10px;
