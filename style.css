@@ -8,14 +8,15 @@ header {
 	color: #DD1972;
 	height: 123px;
 	text-align: center;
+  width: 100%;
 }
 
 h1 {
   font-weight: lighter;
   padding: 20px 0 0 0;
   margin: 0;
- font-size: 55px;
- 
+  font-size: 55px;
+  width: 100%;
 }
 
 span {
@@ -59,11 +60,12 @@ main {
 	display: flex;
 	flex-direction: row;
 	background-color: #969DA7;
+  width: 100%;
 }
 
-.guess {
+section.guess {
 	background-color: #F7F7F7;
-	width: 533px;
+	width: 50%;
   height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -72,11 +74,32 @@ main {
 ul {
 	padding: 3px;
 	margin: 5px;
+  width: 100%;
+}
+
+ul.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+ul.set-range {
+  display: flex;
+  flex-direction: row;
+}
+ul.last-guess {
+  padding: 0px;
+  margin: 5px 0px 5px 0px;
   text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+li.last-guess {
+  margin: auto;
 }
 
 li {
 	display: inline-block;
+  margin: 0px 5px 0px 0px;
 }
 
 label {
@@ -84,15 +107,13 @@ label {
 	color: gray;
   text-align: left;
 }
-
-.set-range  {
-	border: 1px solid gray;
-	height: 130px;
-	width: 500px;
+article.set-range  {
+	border: 1px solid #EBEBEB;
+	height: 100%;
+	width: 94%;
 	background-color: #FFFFFF;
-	margin: 10px 10px 0px 10px;
+	margin: 10px;
 }
-
 .current-range  {
 	border: 1px solid gray;
 	height: 360px;
@@ -101,48 +122,65 @@ label {
 	margin: 10px 10px 0px 10px;
 }
 
-.current-range h3 {
-	margin: 10px 0 0 10px;
+h3 {
+  font-weight: lighter;
+  padding: 0px 0px 0px 5px;
 }
 
-.latest-score {
-	border: 1px solid gray;
-	height: 201px;
-	width: 500px;
-	background-color: #FFFFFF;
-	margin: 10px 10px 10px 10px;
+u.num1, u.num2 {
+  font-weight: bold;
 }
+
+.update-range {
+  background-color: #6E6E6E;
+  color: #FFFFFF;
+  border-radius: 20px;
+  width: 122px;
+  height: 35px;
+  margin: 15px 0 0 50px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+#Range1, #Range2 {
+  height: 30px;
+  width: 100%;
+  border: 1px solid #DDDDDD;
+ }
+
+article.current-range  {
+	border: 1px solid #EBEBEB;
+	height: 100%;
+	width: 94%;
+	background-color: #FFFFFF;
+	margin: 10px;
+}
+
+#Name1, #Name2, #Guess1, #Guess2 {
+  border: 1px solid #DDDDDD;
+  width: 100%;
+  height: 30px;
+  margin: 0px 15px 0px 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.error3 {
+  width: 100%;
+  height: 10px;
+  text-align: left;
+  margin: 0px 10px 5px 10px;
+}
+
+/*#Guess1, #Guess2 {
+  border: 1px solid #DDDDDD;
+  width: 100%;
+  height: 30px;
+}*/
 
 h2 {
 	margin: 10px 0 5px 10px;
 	color: #404041;
-}
-
-#Range1, #Range2 {
- 	height: 33px;
- 	width: 156px;
- }
-
- .update-range {
- 	background-color: #6E6E6E;
- 	color: #FFFFFF;
- 	border-radius: 20px;
- 	width: 122px;
- 	height: 35px;
- 	margin: 0 0 0 15px;
- 	font-weight: bold;
- 	font-size: 17px;
- }
-
-#Name1, #Name2 {
-	width: 295px;
-	height: 30px;
-	margin: 0 15px 0 0;
-}
-
-#Guess1, #Guess2 {
-	width: 156px;
-	height: 30px;
 }
 
 .submit-guess  {
@@ -171,15 +209,24 @@ h2 {
  	font-size: 17px;
 }
 
+article.latest-score {
+  border: 1px solid #EBEBEB;
+  height: 100%;
+  width: 94%;
+  background-color: #FFFFFF;
+  margin: 10px;
+}
 
 .latest-score h3 {
 	margin: auto;
   text-align: center;
 }
 
-.latest-score  h4 {
-	margin: auto;
+h4 {
+  margin: auto;
   text-align: center;
+  color: #6E6E6E;
+  font-weight: lighter;
 }
 
 .latest-score span {
@@ -191,57 +238,65 @@ h2 {
 
 h3.challenger1, h3.challenger2 {
   margin: 0px 30px 0px 30px;
+  color: #6E6E6E;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-h3.thats1.thats2 {
-	margin: 10px 40px 0 50px; 
-	font-weight: lighter;
+h3.thats1, h3.thats2 {
+	margin: 10px 0px 10px 0px; 
+	font-weight: bold;
+  text-align: center;
 }
 
 .winner1, .winner2 {
 	border: 1px solid gray;
 	height: 188px;
-	width: 467px;
+	width: 94%;
 	background-color: #FFFFFF;
-	margin: 10px 0 2px 10px;
+	margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 	text-align: center;
   display: none;
 
 }
 
 hr {
-	width: 430px;
+	width: 98%;
 	color: #D6DEE7;
 }
 
 section.result {
-  width: 100%;
+  width: 50%;
+  height: 100%;
+}
+
+h3.face-off {
+  font-weight: bold;
 }
 
 .guesses-result {
-	display: inline-block;
-	margin: 0px;
+	display: flex;
+  flex-direction: row;
+  margin: 0px;
   width: 100%;
-  text-align: left;
 }
 
 li.guess {
-    margin: 0px 75px;
-    width: 0px;
-    height: 100%;
-    display: inline-block;
-    text-align: center;
+  width: 0px;
+  height: 100%;
+  margin: auto;
 }
-
-.delete-card1, .delete-card2 {
-	 border-radius: 20px;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    font-weight: bold;
-    padding: 1px;
-    background-color: #6E6E6E;
-    color: #D0D0D2D3;
+.delete-card1, delete-card2 {
+	border-radius: 20px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+  padding: 1px;
+  background-color: #6E6E6E;
+  color: #D0D0D2D3;
 }
 
 input[type=text] {
@@ -261,22 +316,154 @@ input[type=text]:focus {
   margin: 5px 1px 3px 0px;
   border: 2px solid #DD1972;
 }
-
-.error1, .error2, .error3{
+ .error1, .error2, .error3{
   display: none;
   color: #DD1972;
   width: 100%;
   height: 10px;
   text-align: left;
   margin: 0 10px 5px 10px;
+  }
+    
+@media screen and (max-width: 960px) {
+  .update-range {
+    margin: 15px 10px 15px 0px;
+  }
+
+  ul.set-range {
+    display: flex;
+    flex-direction: row;
+  }
+
+  ul.buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .submit-guess, .reset-game, .clear-game {
+    width: auto;
+    margin: 5px 10px 5px 10px;
+    font-size: 14px;
+  }
+
+  #Range1, #Range2 {
+    width: 80%;
+  }
 }
 
-@media screen and (max-width: 400px) {
-  header, h1 {
+@media screen and (max-width: 770px) {
+  h1 {
+    font-size: 30px;
+    padding: 40px 0px 0px 0px;
+  }
+
+  .ultimate {
+  font-size: 10px;
+    text-align: center;
+  }
+
+.ultimate span:before,
+.ultimate span:after {
+  width: 30%;
+}
+
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  button.update-range {
+    margin: 10px 0px 10px 0px;
     width: 100%;
   }
-  main {
+
+  ul {
     width: 100%;
+    margin: 0px;
+  }
+
+  ul.buttons {
     display: block;
   }
+
+  li {
+    display: block;
+  }
+
+  #Name1, #Name2 {
+    width: 100%;
+  }
+
+  .submit-guess, .reset-game, .clear-game {
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+    font-size: 12px;
+  }
 }
+
+@media screen and (max-width: 600px) {
+  header {
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 30px;
+    padding: 10px 0 0 0;
+  }
+
+  h2, h3 {
+    text-align: left;
+    margin: 5px 0px 0px 10px;
+  }
+
+  ul.set-range {
+    display: block;
+  }
+  .submit-guess, .reset-game, .clear-game {
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+    font-size: 12px;
+  }
+
+  #Range1, #Range2, #Name1, #Name2, #Guess1, #Guess2 {
+    width: 100%;
+    height: 30px;
+  }
+
+  .ultimate {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .ultimate span:before, .ultimate span:after {
+    width: 28%;
+  }
+
+  main {
+    display: block;
+  }
+
+  section.guess {
+    display: block;
+    width: 100%;
+  }
+
+  ul.buttons{
+    display: block;
+  }
+
+  .update-range {
+    margin: 5px 0px 0px 5px;
+    width: 50%;
+  }
+
+  li.button {
+    width: 100%;
+  }
+
+  section.result {
+    display: block;
+    width: 100%;
+  }
+}
+

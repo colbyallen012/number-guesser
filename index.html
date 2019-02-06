@@ -5,6 +5,7 @@
       <link rel="stylesheet" type="text/css" href="normalize.css">
   	  <link rel="stylesheet" type="text/css" href="style.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
   	<header>
@@ -15,22 +16,23 @@
   	</header>
     <main>
   	<section class="guess">
-  			<div class="set-range">
+  			<article class="set-range">
   			  <h2>Set Range</h2>
-  			  <ul>
+  			  <ul class="set-range">
   			    <li><label for="Min-Range" class="min-range1">Min Range</label><input id="Range1" type="number"></li>
             <li><span class="error"></span></li>
   			    <li><label for="Max-Range" class="max-range1">Max Range</label><input id="Range2" type="number"></li>
-  			    <li><button class="update-range" type="button">UPDATE</button></li>	
+  			   <li><button class="update-range" type="button">UPDATE</button></li>	
             <p class="error1">Please enter a range to play</p>
             <p class="error2">Your min range must be less than your max range</p>
-  			</div>
-  			<div class="current-range">
+  			</ul>
+        </article>
+  			<article class="current-range">
   			  <h3>The Current Range is <u class="num1">1</u> to <u class="num2"> 100</u></h3>
   			  <h2>Challenger 1</h2>
   			  <ul>
   			  	<li><label for="Name1">Name</label><input id="Name1" type="text"></li>
-  			    <li><label for="Guess1">Guess</label><input id="Guess1" type="number"></li> 
+  			    <li><label for="Guess1">Guess</label><input id="Guess1" type="number"></li>
             <p class="error3">Enter a name</p>
   			  </ul>
   			  <h2>Challenger 2</h2>
@@ -38,28 +40,29 @@
   			  	<li><label for="Name2">Name</label><input id="Name2" type="text"></li>
   			    <li><label for="Guess2">Guess</label><input id="Guess2" type="number"></li>
   			  </ul>
-  			  <ul>
+  			  <ul class="buttons">
   			  	<li><button class="submit-player submit-guess" type="submit">Submit Guess</button></li>	
   			  	<li><button class="reset-game" type="button">Reset Game</button></li>	
   			  	<li><button class="clear-game" type="button">Clear Game</button></li>
   			  </ul>	
-  			</div>
-  			<div class="latest-score">
+  			</article>
+  			<article class="latest-score">
   			  <h2>Latest Score</h2>
-  			  <ul>
-  			  	<li>
+  			  <ul class="last-guess">
+  			  	<li class="last-guess">
   			  		<h3 class="challenger1">Challenger 1 Name</h3>
   			  		<h4>Current Guess</h4>
   			  		<span class="challenger1-guess"></span>
   			  		 <h3 class="thats1"></h3>
   			  	</li>
-  			  	<li>
+  			  	<li class="last-guess">
   			  		<h3 class="challenger2">Challenger 2 Name</h3>
   			  		<h4>Current guess</h4>
   			  		<span class="challenger2-guess"></span>
   			  		<h3 class="thats2"></h3>
   			  	</li>
-  			</div>
+  			</ul>
+      </article>
   	</section>
   	<section class="result">
   		<div class="winner1">
