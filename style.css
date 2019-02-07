@@ -71,30 +71,42 @@ section.guess {
 	flex-direction: column;
 }
 
-ul {
-	padding: 3px;
-	margin: 5px;
-  width: 100%;
+ul.challenger1-field {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  padding: 0px;
 }
 
 ul.buttons {
   display: flex;
   flex-direction: row;
+  margin: 5px;
+  padding: 0px;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 ul.set-range {
   display: flex;
   flex-direction: row;
+  margin: 5px;
+  padding: 0px;
 }
+
 ul.last-guess {
   padding: 0px;
   margin: 5px 0px 5px 0px;
   text-align: center;
-  display: inline-block;
+  justify-content: space-between;
+  display: flex;
   width: 100%;
 }
-li.last-guess {
-  margin: auto;
+
+.vl {
+  border-left: 2px solid #D0D2D3;
+  height: 200px;
+  margin: 0px;
 }
 
 li {
@@ -107,6 +119,7 @@ label {
 	color: gray;
   text-align: left;
 }
+
 article.set-range  {
 	border: 1px solid #EBEBEB;
 	height: 100%;
@@ -114,6 +127,7 @@ article.set-range  {
 	background-color: #FFFFFF;
 	margin: 10px;
 }
+
 .current-range  {
 	border: 1px solid gray;
 	height: 360px;
@@ -137,7 +151,7 @@ u.num1, u.num2 {
   border-radius: 20px;
   width: 122px;
   height: 35px;
-  margin: 15px 0 0 50px;
+  margin: 15px 0;
   font-weight: bold;
   font-size: 17px;
 }
@@ -165,19 +179,6 @@ article.current-range  {
   flex-direction: row;
 }
 
-.error3 {
-  width: 100%;
-  height: 10px;
-  text-align: left;
-  margin: 0px 10px 5px 10px;
-}
-
-/*#Guess1, #Guess2 {
-  border: 1px solid #DDDDDD;
-  width: 100%;
-  height: 30px;
-}*/
-
 h2 {
 	margin: 10px 0 5px 10px;
 	color: #404041;
@@ -189,7 +190,6 @@ h2 {
 	border-radius: 20px;
 	background-color: #6E6E6E;
 	color: #FFFFFF;
-	margin: 10px 5px 2px 5px;
 	font-weight: bold;
  	font-size: 17px;
 }
@@ -204,7 +204,6 @@ h2 {
 	border-radius: 20px;
 	background-color: #D0D2D3;
 	color: #FFFFFF;
-	margin: 10px 5px 2px 5px;
 	font-weight: bold;
  	font-size: 17px;
 }
@@ -230,7 +229,7 @@ h4 {
 }
 
 .latest-score span {
-	font-size: 50px;
+	font-size: 70px;
 	padding: 0 80px 0 80px;
 	color: #F74D9B;
 	font-weight: bold 700;
@@ -259,12 +258,12 @@ h3.thats1, h3.thats2 {
   margin-bottom: 10px;
 	text-align: center;
   display: none;
-
 }
 
 hr {
 	width: 98%;
 	color: #D6DEE7;
+  margin: 6px 2.5px 6px 2.5px;
 }
 
 section.result {
@@ -276,19 +275,34 @@ h3.face-off {
   font-weight: bold;
 }
 
+h3.face-off2 {
+  font-size: 20px;
+  margin: 10px 0px 2px 0px;
+  text-align: center;
+  word-spacing: 25px;
+  font-weight: bold;
+}
+
+h2.winner {
+  font-weight: lighter;
+  text-align: center;
+}
+
+h2.Name2 {
+  font-size: 40px;
+  margin: auto;
+  text-align: center;
+}
+
 .guesses-result {
 	display: flex;
   flex-direction: row;
-  margin: 0px;
+  justify-content: space-evenly;
   width: 100%;
+  margin: 0px;
 }
 
-li.guess {
-  width: 0px;
-  height: 100%;
-  margin: auto;
-}
-.delete-card1, delete-card2 {
+.delete-card1, .delete-card2 {
 	border-radius: 20px;
   height: 20px;
   width: 20px;
@@ -317,12 +331,13 @@ input[type=text]:focus {
   border: 2px solid #DD1972;
 }
  .error1, .error2, .error3{
-  display: none;
-  color: #DD1972;
-  width: 100%;
-  height: 10px;
-  text-align: left;
-  margin: 0 10px 5px 10px;
+    display: none;
+    color: #DD1972;
+    width: 100%;
+    font-size: 15px;
+    height: 22px;
+    text-align: left;
+    margin: 0px 0px 0px 5px;
   }
     
 @media screen and (max-width: 960px) {
@@ -342,8 +357,7 @@ input[type=text]:focus {
 
   .submit-guess, .reset-game, .clear-game {
     width: auto;
-    margin: 5px 10px 5px 10px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   #Range1, #Range2 {
@@ -377,17 +391,21 @@ input[type=text]:focus {
     width: 100%;
   }
 
-  ul {
-    width: 100%;
-    margin: 0px;
-  }
-
   ul.buttons {
     display: block;
   }
 
   li {
     display: block;
+  }
+
+  ul.last-guess {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vl {
+    display: none;
   }
 
   #Name1, #Name2 {
@@ -464,6 +482,15 @@ input[type=text]:focus {
   section.result {
     display: block;
     width: 100%;
+  }
+
+  ul.last-guess {
+    display: flex;
+    flex-direction: column;
+  }
+
+.vl {
+    display: none;
   }
 }
 
