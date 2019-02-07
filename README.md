@@ -8,9 +8,7 @@ Comp images. (Desktop & mobile)
 
 <img width="713" alt="comp desktop" src="https://user-images.githubusercontent.com/43159025/52389747-45e79300-2a52-11e9-8d30-ae28842a7c47.png">
 
-<img width="154" alt="comp mobile1" src="https://user-images.githubusercontent.com/43159025/52389754-50a22800-2a52-11e9-9719-7457baa06de3.png">
-
-<img width="155" alt="comp mobile 2" src="https://user-images.githubusercontent.com/43159025/52389769-60ba0780-2a52-11e9-95c2-f3d3e9352ec3.png">
+<img width="154" alt="comp mobile1" src="https://user-images.githubusercontent.com/43159025/52389754-50a22800-2a52-11e9-9719-7457baa06de3.png"> <img width="155" alt="comp mobile 2" src="https://user-images.githubusercontent.com/43159025/52389769-60ba0780-2a52-11e9-95c2-f3d3e9352ec3.png">
 
 Our images. (Desktop, tablet, & mobile)
 
